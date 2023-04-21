@@ -19,7 +19,7 @@
 
 char telaPrincipal(void);
 void telaSobre(void);
-void telaEquipe(void);
+void telaProdutos(void);
 
 void modulocliente(void);
 char telaMenucliente(void);
@@ -28,19 +28,19 @@ void telaPesquisarcliente(void);
 void telaAlterarcliente(void);
 void telaExcluircliente(void);
 
-void moduloAdministrador(void);
-char telaMenuAdministrador(void);
-void telaCadastrarAdministrador(void);
-void telaPesquisarAdministrador(void);
-void telaAlterarAdministrador(void);
-void telaExcluirAdministrador(void);
+void moduloEncomendas(void);
+char telaMenuEncomendas(void);
+void telaCadastrarEncomendas(void);
+void telaPesquisarEncomendas(void);
+void telaAlterarEncomendas(void);
+void telaExcluirEncomendas(void);
 
-void moduloEquipe(void);
-char telaMenuEquipe(void);
-void telaCadastrarEquipe(void);
-void telaPesquisarEquipe(void);
-void telaAlterarEquipe(void);
-void telaExcluirEquipe(void);
+void moduloProdutos(void);
+char telaMenuProdutos(void);
+void telaCadastrarProdutos(void);
+void telaPesquisarProdutos(void);
+void telaAlterarProdutos(void);
+void telaExcluirProdutos(void);
 
 
 
@@ -56,12 +56,12 @@ int main(void) {
         switch(opcao) {
             case '1':   modulocliente();
                         break;
-            case '2':   moduloAdministrador();
+            case '2':   moduloEncomendas();
                         break;
-            case '3':   moduloEquipe();
+            case '3':   moduloProdutos();
                         break;
             case '4':   telaSobre();
-                        telaEquipe();
+                        telaProdutos();
                         break;
         } 	
     } while (opcao != '0');
@@ -96,8 +96,8 @@ char telaPrincipal(void) {
     printf("///         = = = = = Sistema de Gestão de Chapelaria = = = = =             ///\n");
     printf("///                                                                         ///\n");
     printf("///            1. Módulo cliente                                            ///\n");
-    printf("///            2. Módulo Administrador                                      ///\n");
-    printf("///            3. Módulo Equipe                                             ///\n");
+    printf("///            2. Módulo Encomendas                                         ///\n");
+    printf("///            3. Módulo Produtos                                           ///\n");
     printf("///            4. Módulo Sobre                                              ///\n");
     printf("///            0. Sair                                                      ///\n");
     printf("///                                                                         ///\n");
@@ -129,7 +129,7 @@ void telaSobre(void) {
     printf("///                                                                         ///\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                         ///\n");
-    printf("///            = = = = = Sistema de Gestão Escolar = = = = =                ///\n");
+    printf("///        = = = = = Sistema de Administração de chapelaria = = = = =       ///\n");
     printf("///                                                                         ///\n");
     printf("///  Programa exemplo utilizado na disciplina DCT1106 - Programação, para   ///\n");
     printf("///  fins didáticos de ilustração. O programa contém os principais módulos  ///\n");
@@ -145,7 +145,7 @@ void telaSobre(void) {
 
 
 
-void telaEquipe(void) {
+void telaProdutos(void) {
     system("clear||cls");
     printf("\n");
     printf("///////////////////////////////////////////////////////////////////////////////\n");
@@ -240,7 +240,7 @@ char telaMenucliente(void) {
 
 
 void telaCadastrarcliente(void) {
-    char nudc[12];
+    char cpf[12];
     char nome[51];
     char email[51];
     char nasc[11];
@@ -260,11 +260,11 @@ void telaCadastrarcliente(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = = Cadastrar cliente = = = = = = = =             ///\n");
+    printf("///           = = = = = = = Cadastrar cliente = = = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
-    printf("///           Número de cadastro (apenas números): ");
-    scanf("%[0-9]", nudc);
+    printf("///           CPF: ");
+    scanf("%[0-9]", cpf);
     getchar();
     printf("///           Nome completo: ");
     scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
@@ -289,7 +289,7 @@ void telaCadastrarcliente(void) {
 
 
 void telaPesquisarcliente(void) {
-    char nudc[12];
+    char cpf[12];
     
     system("clear||cls");
     printf("\n");
@@ -305,11 +305,11 @@ void telaPesquisarcliente(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = = Pesquisar cliente = = = = = = = =             ///\n");
+    printf("///           = = = = = = = Pesquisar cliente = = = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
-    printf("///           Informe a nudcícula (apenas números): ");
-    scanf("%[0-9]", nudc);
+    printf("///           Informe a cpfícula (apenas números): ");
+    scanf("%[0-9]", cpf);
     getchar();
     printf("///                                                                       ///\n");
     printf("///                                                                       ///\n");
@@ -322,7 +322,7 @@ void telaPesquisarcliente(void) {
 
 
 void telaAlterarcliente(void) {
-    char nudc[12];
+    char cpf[12];
     
     system("clear||cls");
     printf("\n");
@@ -342,7 +342,7 @@ void telaAlterarcliente(void) {
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
     printf("///           Informe o Número do cadastro (apenas números): ");
-    scanf("%[0-9]", nudc);
+    scanf("%[0-9]", cpf);
     getchar();
     printf("///                                                                       ///\n");
     printf("///                                                                       ///\n");
@@ -355,7 +355,7 @@ void telaAlterarcliente(void) {
 
 
 void telaExcluircliente(void) {
-    char nudc[12];
+    char cpf[12];
     
     system("clear||cls");
     printf("\n");
@@ -375,7 +375,7 @@ void telaExcluircliente(void) {
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
     printf("///           Informe o Número do cadastro (apenas números): ");
-    scanf("%[0-9]", nudc);
+    scanf("%[0-9]", cpf);
     getchar();
     printf("///                                                                       ///\n");
     printf("///                                                                       ///\n");
@@ -388,21 +388,21 @@ void telaExcluircliente(void) {
 
 
 //////
-////// Funções do Módulo Administrador
+////// Funções do Módulo Encomendas
 //////
 
-void moduloAdministrador(void) {
+void moduloEncomendas(void) {
     char opcao;
     do {
-        opcao = telaMenuAdministrador();
+        opcao = telaMenuEncomendas();
         switch(opcao) {
-            case '1': 	telaCadastrarAdministrador();
+            case '1': 	telaCadastrarEncomendas();
                         break;
-            case '2': 	telaPesquisarAdministrador();
+            case '2': 	telaPesquisarEncomendas();
                         break;
-            case '3': 	telaAlterarAdministrador();
+            case '3': 	telaAlterarEncomendas();
                         break;
-            case '4': 	telaExcluirAdministrador();
+            case '4': 	telaExcluirEncomendas();
                         break;
         } 		
     } while (opcao != '0');
@@ -410,7 +410,7 @@ void moduloAdministrador(void) {
 
 
 
-char telaMenuAdministrador(void) {
+char telaMenuEncomendas(void) {
     char op;
     
     system("clear||cls");
@@ -427,13 +427,13 @@ char telaMenuAdministrador(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = =  Menu Administrador = = = = = = = =         ///\n");
+    printf("///           = = = = = = = =  Menu Encomendas  = = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
-    printf("///           1. Cadastrar um novo Administrador                          ///\n");
-    printf("///           2. Pesquisar os dados de um Administrador                   ///\n");
-    printf("///           3. Atualizar o cadastro de um Administrador                 ///\n");
-    printf("///           4. Excluir um Administrador do sistema                      ///\n");
+    printf("///           1. Cadastrar uma nova Encomenda                             ///\n");
+    printf("///           2. Pesquisar os dados de uma Encomenda                      ///\n");
+    printf("///           3. Atualizar uma Encomenda                                  ///\n");
+    printf("///           4. Excluir uma Encomenda do sistema                         ///\n");
     printf("///           0. Voltar                                                   ///\n");
     printf("///                                                                       ///\n");
     printf("///           Escolha a opção desejada: ");
@@ -450,12 +450,8 @@ char telaMenuAdministrador(void) {
 
 
 
-void telaCadastrarAdministrador(void) {
+void telaCadastrarEncomendas(void) {
     char cpf[12]; 
-    char nome[51];
-    char email[51];
-    char nasc[11];
-    char celular[12];
 
     system("clear||cls");
     printf("\n");
@@ -471,24 +467,12 @@ void telaCadastrarAdministrador(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = Cadastrar Administrador = = = = = = =             ///\n");
+    printf("///           = = = = = = = Cadastrar Encomendas  = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
     printf("///           CPF (apenas números): ");
     scanf("%[0-9]", cpf);
     getchar();
-    printf("///           Nome completo: ");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ]", nome);
-    getchar();
-    printf("///           E-mail: ");
-    scanf("%[A-Za-z0-9@._]", email);
-    getchar();
-    printf("///           Data de Nascimento (dd/mm/aaaa):  ");
-    scanf("%[0-9/]", nasc);
-    getchar();
-    printf("///           Celular  (apenas números): ");
-    scanf("%[0-9]", celular);
-    getchar();
     printf("///                                                                       ///\n");
     printf("///                                                                       ///\n");
     printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -498,7 +482,7 @@ void telaCadastrarAdministrador(void) {
 }
 
 
-void telaPesquisarAdministrador(void) {
+void telaPesquisarEncomendas(void) {
     char cpf[12];
     
     system("clear||cls");
@@ -515,7 +499,7 @@ void telaPesquisarAdministrador(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = Pesquisar Administrador = = = = = = =             ///\n");
+    printf("///           = = = = = = = Pesquisar Encomendas = = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
     printf("///           Informe o CPF (apenas números): ");
@@ -531,7 +515,7 @@ void telaPesquisarAdministrador(void) {
 
 
 
-void telaAlterarAdministrador(void) {
+void telaAlterarEncomendas(void) {
     char cpf[12];
     
     system("clear||cls");
@@ -548,7 +532,7 @@ void telaAlterarAdministrador(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = Alterar Administrador = = = = = = = =             ///\n");
+    printf("///           = = = = = = = Alterar Encomendas = = = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
     printf("///           Informe o CPF (apenas números): ");
@@ -564,7 +548,7 @@ void telaAlterarAdministrador(void) {
 
 
 
-void telaExcluirAdministrador(void) {
+void telaExcluirEncomendas(void) {
     char cpf[12];
     
     system("clear||cls");
@@ -581,7 +565,7 @@ void telaExcluirAdministrador(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = Excluir Administrador = = = = = = = =             ///\n");
+    printf("///           = = = = = = = Excluir Encomendas = = = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
     printf("///           Informe o CPF (apenas números): ");
@@ -598,21 +582,21 @@ void telaExcluirAdministrador(void) {
 
 
 //////
-////// Funções do Módulo Equipe
+////// Funções do Módulo Produtos
 //////
 
-void moduloEquipe(void) {
+void moduloProdutos(void) {
     char opcao;
     do {
-        opcao = telaMenuEquipe();
+        opcao = telaMenuProdutos();
         switch(opcao) {
-            case '1': 	telaCadastrarEquipe();
+            case '1': 	telaCadastrarProdutos();
                         break;
-            case '2': 	telaPesquisarEquipe();
+            case '2': 	telaPesquisarProdutos();
                         break;
-            case '3': 	telaAlterarEquipe();
+            case '3': 	telaAlterarProdutos();
                         break;
-            case '4': 	telaExcluirEquipe();
+            case '4': 	telaExcluirProdutos();
                         break;
         } 		
     } while (opcao != '0');
@@ -620,7 +604,7 @@ void moduloEquipe(void) {
 
 
 
-char telaMenuEquipe(void) {
+char telaMenuProdutos(void) {
     char op;
 
     system("clear||cls");
@@ -637,13 +621,13 @@ char telaMenuEquipe(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = = =  Menu Equipe  = = = = = = = =             ///\n");
+    printf("///           = = = = = = = = =  Menu Produtos  = = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
-    printf("///           1. Cadastrar uma nova Equipe                                ///\n");
-    printf("///           2. Pesquisar os dados de uma Equipe                         ///\n");
-    printf("///           3. Atualizar o cadastro de uma Equipe                       ///\n");
-    printf("///           4. Excluir uma Equipe do sistema                            ///\n");
+    printf("///           1. Cadastrar um novo Produto                                ///\n");
+    printf("///           2. Pesquisar os dados de um Produto                         ///\n");
+    printf("///           3. Atualizar o cadastro de um Produto                       ///\n");
+    printf("///           4. Excluir um Produto do sistema                            ///\n");
     printf("///           0. Voltar                                                   ///\n");
     printf("///                                                                       ///\n");
     printf("///           Escolha a opção desejada: ");
@@ -660,13 +644,11 @@ char telaMenuEquipe(void) {
 
 
 
-void telaCadastrarEquipe(void) {
-    char codEquipe[4];
-    char nomeEquipe[31];
-    char semestre[7];
+void telaCadastrarProdutos(void) {
+    char codProdutos[4];
+    char nomeProdutos[31];
     char horario[15];
-    char cpf[12];
-    char local[11];
+
 
     system("clear||cls");
     printf("\n");
@@ -682,27 +664,17 @@ void telaCadastrarEquipe(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = = Cadastrar Equipe = = = = = = = =             ///\n");
+    printf("///           = = = = = =  Cadastrar Produtos = = = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
-    printf("///           Código da Equipe (Ex. F01, S02): ");
-    scanf("%[A-Z0-9]", codEquipe);
+    printf("///           Código do Produto (Ex. C001, S002): ");
+    scanf("%[A-Z0-9]", codProdutos);
     getchar();
-    printf("///           Nome da Equipe (Ex. Francês Básico 1): ");
-    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ0-9]", nomeEquipe);
-    getchar();
-    printf("///           Semestre (Ex. 2021.1): ");
-    scanf("%[0-9.]", semestre);
-    getchar();
+    printf("///           Nome da Produtos (Ex. chapéu camuflado com saia): ");
+    scanf("%[A-ZÁÉÍÓÚÂÊÔÇÀÃÕ a-záéíóúâêôçàãõ0-9]", nomeProdutos);
     printf("///           Horário (Ex. 35M12): ");
     scanf("%[0-9MTN]", horario);
     getchar();
-    printf("///           CPF do Administrador (apenas números): ");
-    scanf("%[0-9]", cpf);
-    getchar();
-    printf("///           Local das aulas (Ex. Sala F1): "); 
-    scanf("%[A-Za-z 0-9]", local);
-    getchar();
     printf("///                                                                       ///\n");
     printf("///                                                                       ///\n");
     printf("/////////////////////////////////////////////////////////////////////////////\n");
@@ -713,8 +685,8 @@ void telaCadastrarEquipe(void) {
 
 
 
-void telaPesquisarEquipe(void) {
-    char codEquipe[4];
+void telaPesquisarProdutos(void) {
+    char codProdutos[4];
     
     system("clear||cls");
     printf("\n");
@@ -730,11 +702,11 @@ void telaPesquisarEquipe(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = = Pesquisar Equipe = = = = = = = =             ///\n");
+    printf("///           = = = = = = =  Pesquisar Produtos = = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
-    printf("///           Informe o código da Equipe (Ex. F01, S02): ");
-    scanf("%[A-Z0-9]", codEquipe);
+    printf("///           Informe o código do Produto (Ex. C001, S002): ");
+    scanf("%[A-Z0-9]", codProdutos);
     getchar();
     printf("///                                                                       ///\n");
     printf("///                                                                       ///\n");
@@ -746,8 +718,8 @@ void telaPesquisarEquipe(void) {
 
 
 
-void telaAlterarEquipe(void) {
-    char codEquipe[4];
+void telaAlterarProdutos(void) {
+    char codProdutos[4];
     
     system("clear||cls");
     printf("\n");
@@ -763,11 +735,11 @@ void telaAlterarEquipe(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = =  Alterar Equipe  = = = = = = = =             ///\n");
+    printf("///           = = = = = = = =  Alterar Produtos  = = = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
-    printf("///           Informe o código da Equipe (Ex. F01, S02): ");
-    scanf("%[A-Z0-9]", codEquipe);
+    printf("///           Informe o código da Produtos (Ex. C001, S002): ");
+    scanf("%[A-Z0-9]", codProdutos);
     getchar();
     printf("///                                                                       ///\n");
     printf("///                                                                       ///\n");
@@ -779,8 +751,8 @@ void telaAlterarEquipe(void) {
 
 
 
-void telaExcluirEquipe(void) {
-    char codEquipe[4];
+void telaExcluirProdutos(void) {
+    char codProdutos[4];
     
     system("clear||cls");
     printf("\n");
@@ -796,11 +768,11 @@ void telaExcluirEquipe(void) {
     printf("/////////////////////////////////////////////////////////////////////////////\n");
     printf("///                                                                       ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
-    printf("///           = = = = = = = =  Excluir Equipe  = = = = = = = =             ///\n");
+    printf("///           = = = = = = = =  Excluir Produtos  = = = = = = = =             ///\n");
     printf("///           = = = = = = = = = = = = = = = = = = = = = = = =             ///\n");
     printf("///                                                                       ///\n");
-    printf("///           Informe o código da Equipe (Ex. F01, S02): ");
-    scanf("%[A-Z0-9]", codEquipe);
+    printf("///           Informe o código do Produto (Ex. C001, S002): ");
+    scanf("%[A-Z0-9]", codProdutos);
     getchar();
     printf("///                                                                       ///\n");
     printf("///                                                                       ///\n");
